@@ -1,0 +1,24 @@
+[package]
+name = "colorcol"
+version = "0.1.0"
+edition = "2021"
+description = "Kakoune plugin for inline color preview"
+license = "MIT"
+
+[[bin]]
+name = "colorcol"
+path = "src/main.rs"
+
+[lib]
+name = "colorcol"
+path = "src/lib.rs"
+
+[dependencies]
+color = "0.3"
+
+[profile.release]
+opt-level = "s"
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true

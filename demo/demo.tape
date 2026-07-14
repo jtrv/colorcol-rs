@@ -1,5 +1,6 @@
 # vhs demo.tape  -> demo.gif
-# Self-contained: builds the binary, puts it on PATH, runs kak -n (no user kakrc).
+# Runs kak -n (no user kakrc), so only this plugin is loaded.
+# Build first, then: cd demo && vhs demo.tape
 
 Output demo.gif
 
@@ -16,8 +17,7 @@ Env COLORTERM truecolor
 
 # --- setup (not recorded) ---
 Hide
-Type `export PATH="$PWD/target/release:$PATH"; cargo build --release -q` Enter
-Wait@180s
+Type `export PATH="$PWD/../target/release:$PATH"` Enter
 Type `cd $(mktemp -d)` Enter
 Type `printf '%s\n' '/* palette.css */' ':root {' '  --red:    #ff5555;' '  --orange: #ffb86c;' '  --yellow: #f1fa8c;' '  --green:  #50fa7b;' '  --cyan:   #8be9fd;' '  --purple: #bd93f9;' '} ' '.card   { background: rgb(40 42 54); color: #f8f8f2; }' '.badge  { background: hsl(265 89% 78%); }' '.hint   { color: oklch(0.75 0.12 200); }' '.kakrc  { face: rgb:6272a4; }' > palette.css` Enter
 Type `clear` Enter

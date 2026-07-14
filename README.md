@@ -3,7 +3,7 @@
 A [Kakoune](https://kakoune.org) plugin that previews color literals inline, in the gutter, or as a
 marker after the literal. A Rust rewrite of [SolitudeSF/colorcol](https://github.com/SolitudeSF/colorcol).
 
-![demo](demo.gif)
+![demo](demo/demo.gif)
 
 ## Install
 

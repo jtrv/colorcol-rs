@@ -40,6 +40,9 @@ define-command colorcol-mode -params 1 -shell-script-candidates %{
   printf '%s\n%s\n%s\n%s' background foreground append flag
 } -docstring "Change colorcol mode (background/foreground/append/flag)" %{
   set window colorcol_mode %arg{1}
+  # The new mode writes a different option (ranges vs replace-ranges vs line-specs),
+  # so the buffer must be rescanned even though its timestamp did not change.
+  set window colorcol_timestamp 0
   colorcol-refresh
   colorcol-update-highlighter
 }
